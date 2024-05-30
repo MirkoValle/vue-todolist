@@ -38,3 +38,7 @@ li {
     margin: .5rem;
     border-radius: .5rem;
 }
+
+span.done{
+    text-decoration: line-through;
+}
