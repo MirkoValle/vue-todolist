@@ -25,6 +25,7 @@ createApp({
                     done: false,
                 }
             ],
+            newTask: "",
         }
     },
     methods: {
@@ -34,6 +35,22 @@ createApp({
 
         deleteTask: function (index) {
             this.tasks.splice(index, 1);
+        },
+
+        addTask: function () {
+            if (this.newTask.trim().length > 0) {
+                const newItem = {
+                    text: this.newTask.trim(),
+                    done: false,
+                }
+                this.tasks.push(newItem);
+                this.clearInput()
+            }
+        },
+
+        clearInput() {
+            this.newTask = ""
         }
+
     }
 }).mount('#app')

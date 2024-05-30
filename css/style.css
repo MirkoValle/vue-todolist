@@ -21,7 +21,15 @@ section {
     margin: 0 auto;
 }
 
-
+section.input {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    padding: 1rem;
+    border-radius: .5rem;
+}
 
 ul {
     background-color: white;
@@ -45,4 +53,15 @@ span.done {
 
 span {
     font-size: 1.3rem;
+}
+
+input {
+    width: 50%;
+    padding: .3rem;
+    border-radius: .5rem;
+}
+
+section.input i {
+    padding-left: 1rem;
+    font-size: 1.5rem;
 }

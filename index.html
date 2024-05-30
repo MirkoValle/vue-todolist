@@ -31,10 +31,10 @@
             </ul>
         </section>
 
-
-
-
-
+        <section class="input">
+            <input type="text" placeholder="Write a new task" v-model="newTask" @keyup.enter="addTask">
+            <i class="fa-solid fa-circle-plus" @click="addTask"></i>
+        </section>
 
 
 
