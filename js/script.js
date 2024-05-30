@@ -32,5 +32,8 @@ createApp({
             this.tasks[index].done = !this.tasks[index].done;
         },
 
+        deleteTask: function (index) {
+            this.tasks.splice(index, 1);
+        }
     }
 }).mount('#app')

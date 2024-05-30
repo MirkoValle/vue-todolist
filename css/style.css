@@ -39,6 +39,10 @@ li {
     border-radius: .5rem;
 }
 
-span.done{
+span.done {
     text-decoration: line-through;
+}
+
+span {
+    font-size: 1.3rem;
 }
