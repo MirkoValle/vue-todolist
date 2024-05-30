@@ -4,6 +4,18 @@
     box-sizing: border-box;
 }
 
+div#app {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+}
+
+footer {
+    background-color: white;
+    padding: 1rem;
+}
+
 body {
     background-color: rgb(255, 241, 224);
 
@@ -60,14 +72,12 @@ span.edit {
     display: none;
 }
 
-i {
-    padding-left: 1rem;
-}
 
 input {
     width: 50%;
     padding: .3rem;
     border-radius: .5rem;
+    font-size: 1.5rem;
 }
 
 section.input i {
@@ -78,9 +88,32 @@ section.container input {
     display: none;
     border: none;
     background-color: transparent;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
+    color: grey;
 }
 
 section.container input.edit {
     display: inline;
+}
+
+p {
+    text-align: center;
+    font-size: 2rem;
+}
+
+div#bin span.done {
+    display: none;
+}
+
+i {
+    padding-left: 1rem;
+}
+
+footer p {
+    text-align: start;
+    font-size: 1.5rem;
+}
+
+footer i {
+    padding: 0;
 }

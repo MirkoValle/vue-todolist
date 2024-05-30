@@ -20,29 +20,36 @@
     <div id="app">
 
 
+        <main>
+            <section class="container">
+                <h1>Todo List</h1>
+                <ul v-if="tasks.length > 0">
+                    <li v-for="(task, index) in tasks">
+                        <span :class="{'done':task.done, 'edit':task.edit}" @click="changeDone(index)">{{ task.text
+                            }}</span>
+                        <input :class="task.edit === true ? 'edit' : '' " type="text"
+                            placeholder="Type here to edit task" v-model="editContent" @keyup.enter="editTask(index)"
+                            @keyup.esc="undoEdit(index)" tabindex="0">
+                        <div id="bin">
+                            <span :class="{'done':task.done}"><i class="fa-solid fa-pen"
+                                    @click="startEdit(index)"></i></span>
+                            <span><i class="fa-solid fa-trash" @click="deleteTask(index)"></i></span>
+                        </div>
+                    </li>
+                </ul>
+                <p v-else>You have no tasks, add a new one</p>
+            </section>
 
-        <section class="container">
-            <h1>Todo List</h1>
-            <ul>
-                <li v-for="(task, index) in tasks">
-                    <span :class="{'done':task.done, 'edit':task.edit}" @click="changeDone(index)">{{ task.text
-                        }}</span>
-                    <input :class="task.edit === true ? 'edit' : '' " type="text" placeholder="Type here to edit task"
-                        v-model="editContent" @keyup.enter="editTask(index)" @keyup.esc="undoEdit(index)" tabindex="0">
-                    <div>
-                        <i class="fa-solid fa-pen" @click="startEdit(index)"></i>
-                        <i class="fa-solid fa-trash" @click="deleteTask(index)"></i>
-                    </div>
-                </li>
-            </ul>
-        </section>
+            <section class="input">
+                <input type="text" placeholder="Write a new task" v-model="newTask" @keyup.enter="addTask">
+                <i class="fa-solid fa-circle-plus" @click="addTask"></i>
+            </section>
 
-        <section class="input">
-            <input type="text" placeholder="Write a new task" v-model="newTask" @keyup.enter="addTask">
-            <i class="fa-solid fa-circle-plus" @click="addTask"></i>
-        </section>
+        </main>
 
-
+        <footer>
+            <p>Made with <i class="fa-solid fa-heart"></i> by <a href="https://github.com/MirkoValle">MirkoValle</a></p>
+        </footer>
 
     </div>
     <script src="js/script.js"></script>

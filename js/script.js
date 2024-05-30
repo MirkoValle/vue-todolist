@@ -37,6 +37,11 @@ createApp({
     methods: {
         changeDone: function (index) {
             this.tasks[index].done = !this.tasks[index].done;
+            if (this.tasks[index].done == true) {
+                this.tasks.splice(this.tasks.length - 1, 0, this.tasks.splice(index, 1)[0]);
+            } else {
+                this.tasks.splice(0, 0, this.tasks.splice(index, 1)[0]);
+            }
         },
 
         deleteTask: function (index) {
