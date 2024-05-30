@@ -1,9 +1,9 @@
-const { createApp, ref } = Vue
+const { createApp } = Vue
 
 createApp({
     data() {
         return {
-            task: [
+            tasks: [
                 {
                     text: "Finire l'esercizio",
                     done: false,
@@ -28,6 +28,6 @@ createApp({
         }
     },
     methods: {
-        
+
     }
 }).mount('#app')
