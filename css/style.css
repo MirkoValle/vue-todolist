@@ -41,8 +41,9 @@ ul {
 li {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     background-color: rgb(255, 229, 191);
-    padding: .5rem;
+    padding: .5rem 1rem;
     margin: .5rem;
     border-radius: .5rem;
 }
@@ -55,6 +56,14 @@ span {
     font-size: 1.3rem;
 }
 
+span.edit {
+    display: none;
+}
+
+i {
+    padding-left: 1rem;
+}
+
 input {
     width: 50%;
     padding: .3rem;
@@ -62,6 +71,16 @@ input {
 }
 
 section.input i {
-    padding-left: 1rem;
     font-size: 1.5rem;
+}
+
+section.container input {
+    display: none;
+    border: none;
+    background-color: transparent;
+    font-size: 1.3rem;
+}
+
+section.container input.edit {
+    display: inline;
 }
