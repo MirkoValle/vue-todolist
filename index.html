@@ -27,7 +27,7 @@
                     <li v-for="(task, index) in tasks">
                         <span :class="{'done':task.done, 'edit':task.edit}" @click="changeDone(index)">{{ task.text
                             }}</span>
-                        <input :class="task.edit === true ? 'edit' : '' " type="text"
+                        <input ref="editInput" :class="task.edit === true ? 'edit' : '' " type="text"
                             placeholder="Type here to edit task" v-model="editContent" @keyup.enter="editTask(index)"
                             @keyup.esc="undoEdit(index)" tabindex="0">
                         <div id="bin">

@@ -74,11 +74,12 @@ createApp({
         },
 
         startEdit: function (index) {
-            this.tasks.forEach(task => {
-                task.edit = false
-            });
             this.stopEdit()
             this.tasks[index].edit = true;
+            this.editContent = this.tasks[index].text;
+            this.$nextTick(() => {
+                this.$refs.editInput[index].focus();
+            });
         },
 
         editTask: function (index) {
